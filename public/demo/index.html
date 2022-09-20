@@ -48,11 +48,30 @@
                 </aside>
                 <form>
                     <label
-                        >Proxy:<input type="text" name="intuit-proxy"
+                        >Proxy (/api/intuit/proxy/*):<input
+                            type="text"
+                            name="intuit-proxy"
+                            placeholder="ex: /v3/company/:realm_id/reports/BalanceSheet?date_macro=This+Fiscal+Quarter-to-date"
                     /></label>
-                    <a data-name="intuit-proxy" target="_new"
-                        >/api/intuit/proxy/*</a
+                    <a data-name="intuit-proxy" target="_blank"
+                        ><i>Try it</i></a
                     >
+                    <ul>
+                        <li>
+                            <a
+                                data-name="intuit-balance"
+                                onclick="Demo.updateProxyUrl(event)"
+                                >/v3/company/:realm_id/reports/BalanceSheet?date_macro=This+Fiscal+Quarter-to-date</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                data-name="intuit-balance"
+                                onclick="Demo.updateProxyUrl(event)"
+                                >/v3/company/:realm_id/reports/FECReport?date_macro=This+Fiscal+Quarter-to-date</a
+                            >
+                        </li>
+                    </ul>
                 </form>
             </section>
         </main>

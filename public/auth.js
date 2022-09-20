@@ -8,10 +8,13 @@
 
     let crypto = window.crypto;
     let intuitScopes = [
+        //"com.intuit.quickbooks.payment",
         "com.intuit.quickbooks.accounting",
         "openid",
         "profile",
         "email",
+        //"phone",
+        //"address",
     ];
 
     let baseUrl = "https://appcenter.intuit.com/connect/oauth2";

@@ -12,6 +12,13 @@ var Demo = {};
 
         authorizeDemoUrls(intuitAccessToken, intuitRealmId);
         authorizeProxyUrlOnChange(intuitAccessToken, intuitRealmId);
+
+        Demo.updateProxyUrl = function (ev) {
+            document.querySelector("[name='intuit-proxy']").value =
+                ev.target.innerText;
+
+            authorizeProxyUrl(intuitAccessToken, intuitRealmId);
+        };
     }
 
     function getQueryParams() {
@@ -61,22 +68,26 @@ var Demo = {};
             );
     }
 
+    function authorizeProxyUrl(intuitAccessToken, intuitRealmId) {
+        // foo => /foo
+        // /foo => /foo
+        let path = document
+            .querySelector("[name='intuit-proxy']")
+            .value.replace(/^\/?/, "/");
+
+        let url = new URL(`${envs.APP_BASE_URL}/api/intuit/proxy${path}`);
+        document.querySelector("[data-name='intuit-proxy']").href =
+            url.toString();
+
+        url.searchParams.append("intuit_access_token", intuitAccessToken);
+        url.searchParams.append("intuit_realm_id", intuitRealmId);
+        document.querySelector("[data-name='intuit-proxy']").href =
+            url.toString();
+    }
+
     function createAuthorizeProxyUrl(intuitAccessToken, intuitRealmId) {
-        return function authorizeProxyUrl() {
-            // foo => /foo
-            // /foo => /foo
-            let path = document
-                .querySelector("[name='intuit-proxy']")
-                .value.replace(/^\/?/, "/");
-
-            let url = new URL(`${envs.APP_BASE_URL}/api/intuit/proxy${path}`);
-            document.querySelector("[data-name='intuit-proxy']").href =
-                url.toString();
-
-            url.searchParams.append("intuit_access_token", intuitAccessToken);
-            url.searchParams.append("intuit_realm_id", intuitRealmId);
-            document.querySelector("[data-name='intuit-proxy']").href =
-                url.toString();
+        return function () {
+            return authorizeProxyUrl(intuitAccessToken, intuitRealmId);
         };
     }
 
