@@ -1,0 +1,9 @@
+YOUR_APP_HERE.duckdns.org {
+    handle /api/* {
+        reverse_proxy localhost:3726
+    }
+    handle /* {
+        root * /home/app/srv/intuit-quickbooks-api-demo-js/public/
+        file_server
+    }
+}
