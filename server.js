@@ -3,7 +3,7 @@
 require("dotenv").config({ path: ".env" });
 require("dotenv").config({ path: ".env.secret" });
 
-let PORT = process.env.PORT || 3042;
+let PORT = process.env.PORT || 3726;
 
 let INTUIT_BASE_URL = process.env.INTUIT_BASE_URL;
 let INTUIT_CLIENT_ID = process.env.INTUIT_CLIENT_ID;
