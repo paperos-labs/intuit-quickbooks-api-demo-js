@@ -37,6 +37,7 @@ var Demo = {};
         if (!query.intuit_access_token) {
             let err = new Error("missing intuit_access_token");
             window.alert(err.message);
+            document.location.href = "/";
             throw err;
         }
 
