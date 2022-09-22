@@ -24,7 +24,7 @@ Try it out at <https://YOUR_DEMO_DOMAIN.duckdns.org> or <https://localhost> (wit
 
 ## Setup
 
-0. Install [node](https://webinstall.dev/node) and [caddy][https://webinstall.dev/caddy] \
+0. Install [node](https://webinstall.dev/node) and [caddy](https://webinstall.dev/caddy) \
     ```sh
     # On Mac, Linux
     curl -sS https://webi.sh/node | sh
