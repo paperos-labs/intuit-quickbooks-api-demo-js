@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "See LICENSE in LICENSE",
   "dependencies": {
     "@root/async-router": "^1.0.11",
     "@root/request": "^1.9.1",
